@@ -9,20 +9,6 @@ public class CardController : MonoBehaviour {
     public Color baseColor;
     private CardModel card;
     public int cardIndex;
-    //test
-
-     /*void OnMouseDown()
-    {
-        if (!manager.selected.Contains(cardIndex))
-        {
-            manager.AddCard(this);
-        }
-        else
-        {
-            manager.RemoveCard(cardIndex);
-        }
-        //pass the cardIndex to the manager, then the manager decide what to do
-    }*/
 
     public void Select()
     {

@@ -10,6 +10,7 @@ public class CekihController : MonoBehaviour {
     [SerializeField] private Text warningText;
     
     public void CekihActive(bool active)
+        //Called when buang button is clicked
     {
         if (Managers.RoundManager.isEnded)
         {
@@ -50,11 +51,9 @@ public class CekihController : MonoBehaviour {
     {
         if (Managers.TurnManager.CurrentPlayer.canSink)
         {
-            int nextPlayer = Managers.TurnManager.playerTurn + 1;
-            if (nextPlayer > Managers.RoundManager.PlayerAmount - 1)
-            {
-                nextPlayer = 0;
-            }
+            int playerAmount = Managers.RoundManager.PlayerAmount;
+            //Make nextplayer loop to 0
+            int nextPlayer = Managers.TurnManager.playerTurn + 1 % playerAmount;
             string name = Managers.TurnManager.playerName[nextPlayer];
             warningText.text = "Player selanjutnya (" + name + ") cekih";
             warningText.gameObject.SetActive(true);
